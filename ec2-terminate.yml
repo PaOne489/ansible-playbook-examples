@@ -5,3 +5,4 @@
     ec2:
      state: absent
      instance_ids: i-00dedc1f5427c70d2
+     region: us-west-2
