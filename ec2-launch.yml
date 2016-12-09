@@ -7,3 +7,4 @@
      instance_type: t2.micro
      image: ami-a9d276c9
      group: ansible-sg
+     region: us-west-2
