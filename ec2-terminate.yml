@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks: 
+  - name: terminating EC2 instance
+    ec2:
+     state: absent
+     instance_ids: i-00dedc1f5427c70d2
