@@ -1,0 +1,21 @@
+--- 
+- hosts: localhost
+  vars:
+          key_pair: aws
+          sg: web-sg
+          region: us-west-2
+          image-id: ami-a9d276c9
+          instance-type: t2.micro
+  tasks:
+
+  - name: launching EC2 Instance in "{{ region }}" with "{{ image-id }}" 
+    ec2:
+            key_name: "{{ key_pair }}"
+            group: "{{ sg }}"
+            image: "{{ image-id }}"
+            instance_type: "{{ instnace-type }}"
+            region: "{{ region }}"
+            instance_tags:
+                    Name: web-test
+
+
