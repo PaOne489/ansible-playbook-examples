@@ -34,4 +34,6 @@
             instance_tags:
                     Name: web-test
 
+            exact_count: 1
+            count_tag: Name
 
