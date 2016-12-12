@@ -7,7 +7,19 @@
           image_id: ami-a9d276c9
           instance_type: t2.micro
   tasks:
-
+  - name: Createing "{{ sg }}" and opening port 80 and 22
+    ec2_group:
+            name: "{{ sg }}"
+            region: "{{ region }}"
+            rules:
+             - proto: tcp
+               from_port: 80
+               to_port: 80
+               cidr_ip: 0.0.0.0/0
+             - proto: tcp
+               from_port: 22
+               to_port: 22
+               cidr_ip: 0.0.0.0/0
   - name: launching EC2 Instance in "{{ region }}" with "{{ image_id }}" 
     ec2:
             key_name: "{{ key_pair }}"
