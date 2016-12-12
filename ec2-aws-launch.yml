@@ -23,9 +23,9 @@
                cidr_ip: 0.0.0.0/0
             rules_egress:
              - proto: any
-               from_port: all
-               to_port: all
-               cidr_ip: 0.0.0.0/0
+               from_port: any
+               to_port: any
+               cidr_ip: any
   - name: launching EC2 Instance in "{{ region }}" with "{{ image_id }}" 
     ec2:
             key_name: "{{ key_pair }}"
