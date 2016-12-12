@@ -11,6 +11,7 @@
     ec2_group:
             name: "{{ sg }}"
             region: "{{ region }}"
+            description: web application firewall
             rules:
              - proto: tcp
                from_port: 80
