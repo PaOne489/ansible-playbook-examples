@@ -12,7 +12,7 @@
     ec2:
             key_name: "{{ key_pair }}"
             group: "{{ sg }}"
-            image: "{{ image-id }}"
+            image: "{{ image_id }}"
             instance_type: "{{ instance_type }}"
             region: "{{ region }}"
             instance_tags:
