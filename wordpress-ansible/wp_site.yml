@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  roles:
+   - packages
+   - db_create
+   - wp_download
+   - wp_install

@@ -1,0 +1,5 @@
+---
+- name: downloading wordpress
+  get_url: 
+   url: https://wordpress.org/latest.zip
+   dest: /tmp/wordpress.zip

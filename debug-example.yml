@@ -1,0 +1,20 @@
+---
+- name: testing debug option
+  hosts: localhost
+  tasks:
+  - name: Printing output on the screen
+    shell: /bin/echo hello
+    register: output
+  - debug:
+     msg: "hello test"  
+  - debug:
+     var: output.stdout
+
+
+  - name: System uptime
+    shell: uptime
+    register: uptime
+
+  - debug:
+     var: uptime
+     verbosity: 2

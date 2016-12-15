@@ -1,0 +1,10 @@
+---
+- name: unzip wordpress to /var/www/html
+  unarchive:
+   src: /tmp/wordpress.zip
+   dest: /var/www/html/
+
+- name: copy config file to /var/www/html/wordpress/wp-config.php
+  template:
+   src: wp-config.php.j2
+   dest: /var/www/html/wordpress/wp-config.php

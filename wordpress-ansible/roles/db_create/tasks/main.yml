@@ -1,0 +1,30 @@
+---
+- name: Set root user password
+  # If .my.cnf already exists, this will cause an mysql-root-password update.
+  mysql_user:
+    name: root
+    password: 12345678
+    check_implicit_admin: true
+
+- name: Create .my.cnf
+  template:
+   src: "client.my.cnf.j2"
+   dest: "/root/.my.cnf"
+   owner: root
+   group: root
+   mode: 0600
+
+- name: creating wordpress DB
+  mysql_db:
+   name: wp_db
+   state: present
+
+
+- name: create wordpress user and grant permissions
+  mysql_user:
+    name: wp_user
+    password: 12345
+    host: localhost
+    priv: "wp_db.*:ALL"
+    state: present
+
